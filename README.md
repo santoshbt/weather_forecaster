@@ -1,41 +1,41 @@
-# WeatherForecaster
+Weather Forecast finder by city name
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/weather_forecaster`. To experiment with that code, run `bin/console` for an interactive prompt.
+Description
 
-TODO: Delete this and the text above, and describe your gem
+WeatherForecaster accepts the city name Ex: London or city name followed by country code Ex: London, GB
+It can accept the number of days from the current day to get the weather details. It provides the weather information as follows.
+  - City name which you are searching for.
+  - Country code.
+  - Latitude, Longitude.
+  - Day and night temperature values in Kelvin.  
+  - Pressure and humidity
+  - Weather Description.
+  - Current Date Time.
 
-## Installation
+ Installation
+ 
+ gem install weather_forecaster 
 
-Add this line to your application's Gemfile:
+ or Add gem "weather_forecaster" in gemfile.
 
-```ruby
-gem 'weather_forecaster'
-```
+ Usage
 
-And then execute:
+ require 'WeatherForecaster'
 
-    $ bundle
+ # To get the weather forecast for 5 days from today, default is 1 day.
+ forecast = WeatherForecaster.forecast("London", 5) 
+ 
+ forecast.city = London
+ forecast.country = GB
+ forecast.latitude = 51.50853
+ forecast.longitude = -0.12574
+ forecast.day_temp = 289.56
+ forecast.night_temp = 285.49
+ forecast.pressure = 1015.35
+ forecast.humidity = 76
+ forecast.weather_description = light rain
+ forecast.date 
 
-Or install it yourself as:
+ Author
 
-    $ gem install weather_forecaster
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake rspec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/weather_forecaster. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
-
-
-## License
-
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
+ Santosh Turamari
