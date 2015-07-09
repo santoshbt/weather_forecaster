@@ -1,4 +1,4 @@
-Weather Forecast finder by city name
+Weather Forecast finder by city name. This has been 
 
 Description
 
@@ -14,9 +14,12 @@ It can accept the number of days from the current day to get the weather details
 
  Installation
  
- gem install weather_forecaster 
+ gem install httparty
+ gem install weather_forecaster -v 0.1.0
 
- or Add gem "weather_forecaster" in gemfile.
+ or Add 
+ gem "httparty"
+ gem 'weather_forecaster', '~> 0.1.0' in gemfile.
 
  Usage
 
