@@ -18,7 +18,7 @@ It can accept the number of days from the current day to get the weather details
  gem install weather_forecaster -v 0.1.0
 
  or Add 
- gem "httparty"
+ gem "httparty" and
  gem 'weather_forecaster', '~> 0.1.0' in gemfile.
 
  Usage
