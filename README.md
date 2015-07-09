@@ -1,4 +1,4 @@
-Weather Forecast finder by city name. This has been 
+Weather Forecast finder by city name.
 
 Description
 
