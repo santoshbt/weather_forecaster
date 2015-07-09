@@ -12,7 +12,7 @@ module WeatherForecaster
 			result = {}
 			begin
 				status = Timeout::timeout(5){
-					result = HTTParty.get(@client, :query => {:q=> city, :cnt => count})				    
+					result = HTTParty.get(@client, :query => {:q=> city, :cnt => count})	    
 		    }
 			rescue Timeout::Error => e				
 				puts "Taking too long time", :status => 500
@@ -23,26 +23,32 @@ module WeatherForecaster
 	end	
 
 	class WeatherForecastResponse
-		attr_reader :city, :day_temp, :pressure, :country, :list_details, :latitude, :longitude, :status
+		attr_reader :city, :day_temp, :pressure, :country, :list_details, :latitude, :longitude, :status, :message
 
 		def initialize(result)
 			detail = result.parsed_response
-			@city = detail['city']['name']
-			@country = detail['city']['country']
-			@latitude = detail['city']['coord']['lat']
-			@longitude = detail['city']['coord']['lon']
-      			@status = "ok"
-			@list_details = [ ]
-			detail['list'].each do |list|
-			  @list_details << { 
-				  :date => DateTime.strptime(list['dt'].to_s,'%s'),
-					:day_temp => list['temp']['day'],
-					:night_temp => list['temp']['night'],
-					:weather_description => list['weather'][0]['description'],
-					:pressure => list['pressure'],
-					:humidity => list['humidity']
-				}
-			end		
-		end	
+      if detail['cod'] == "200" 
+  			@city = detail['city']['name']
+  			@country = detail['city']['country']
+  			@latitude = detail['city']['coord']['lat']
+  			@longitude = detail['city']['coord']['lon']
+        @status = "ok"
+  			@list_details = [ ]
+  			detail['list'].each do |list|
+    			  @list_details << { 
+    				  :date => DateTime.strptime(list['dt'].to_s,'%s').strftime,
+    					:day_temp => list['temp']['day'],
+    					:night_temp => list['temp']['night'],
+    					:weather_description => list['weather'][0]['description'],
+    					:pressure => list['pressure'],
+    					:humidity => list['humidity']
+    				}
+  			end		
+      else
+        @status = "not_ok" 
+        @message = [ ] 
+  		end	
+    end  
+			
 	end
 end
