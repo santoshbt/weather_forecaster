@@ -10,7 +10,7 @@ It can accept the number of days from the current day to get the weather details
   - Day and night temperature values in Kelvin.  
   - Pressure and humidity
   - Weather Description.
-  - Current Date Time.
+  - Dates of corresponding days.
 
  #Installation
  
