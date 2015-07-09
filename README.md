@@ -1,6 +1,6 @@
 Weather Forecast finder by city name.
 
-Description
+#Description
 
 WeatherForecaster accepts the city name Ex: London or city name followed by country code Ex: London, GB
 It can accept the number of days from the current day to get the weather details. It provides the weather information as follows.
@@ -12,33 +12,32 @@ It can accept the number of days from the current day to get the weather details
   - Weather Description.
   - Current Date Time.
 
- Installation
+ #Installation
  
- gem install httparty
- gem install weather_forecaster -v 0.1.0
+ - gem install httparty
+ - gem install weather_forecaster -v 0.1.0
 
  or Add 
  gem "httparty" and
  gem 'weather_forecaster', '~> 0.1.0' in gemfile.
 
- Usage
+ # Usage
 
- require 'WeatherForecaster'
+ require 'weather_forecaster'
 
- # To get the weather forecast for 5 days from today, default is 1 day.
+ To get the weather forecast for 5 days from today, default is 1 day.
+ 
  forecast = WeatherForecaster.forecast("London", 5) 
  
- forecast.city = London
- forecast.country = GB
- forecast.latitude = 51.50853
- forecast.longitude = -0.12574
- forecast.day_temp = 289.56
- forecast.night_temp = 285.49
- forecast.pressure = 1015.35
- forecast.humidity = 76
- forecast.weather_description = light rain
- forecast.date 
+ - forecast.city = London
+ - forecast.country = GB
+ - forecast.latitude = 51.50853
+ - forecast.longitude = -0.12574
+ 
+ To get the details of day , night temperature values, humidity, pressure, weather      condition(descrition), dates of   corresponding days
 
+  - forecast.list_details
+ 
  Author
 
  Santosh Turamari
