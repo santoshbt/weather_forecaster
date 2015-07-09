@@ -1,7 +1,6 @@
 require 'httparty'
 require 'json'
 require 'timeout'
-require 'httparty'
 
 module WeatherForecaster
 	class WeatherForecastApi
@@ -30,9 +29,9 @@ module WeatherForecaster
 			detail = result.parsed_response
 			@city = detail['city']['name']
 			@country = detail['city']['country']
-			@latitude = detail['city']['lat']
-			@longitude = detail['city']['lon']
-      @status = "ok"
+			@latitude = detail['city']['coord']['lat']
+			@longitude = detail['city']['coord']['lon']
+      			@status = "ok"
 			@list_details = [ ]
 			detail['list'].each do |list|
 			  @list_details << { 
