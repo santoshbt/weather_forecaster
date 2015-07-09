@@ -34,7 +34,7 @@ It can accept the number of days from the current day to get the weather details
  - forecast.latitude = 51.50853
  - forecast.longitude = -0.12574
  
- To get the details of day , night temperature values, humidity, pressure, weather      condition(descrition), dates of   corresponding days
+ To get the details of day , night temperature values, humidity, pressure, weather condition(description), dates of   corresponding days
 
   - forecast.list_details
  
