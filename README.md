@@ -22,9 +22,11 @@ It can accept the number of days from the current day to get the weather details
 
  require 'weather_forecaster'
 
- To get the weather forecast for 5 days from today, default is 1 day.
+ To get the weather forecast for 5 days from today, use
  
  forecast = WeatherForecaster.forecast("London", 5) 
+ 
+ Default is 1 day.
  
  - forecast.city = London
  - forecast.country = GB
@@ -33,8 +35,9 @@ It can accept the number of days from the current day to get the weather details
  
  To get the details of day , night temperature values, humidity, pressure, weather condition(description), dates of   corresponding days
 
-  - forecast.list_details
+ - forecast.list_details
  
+
  Author
 
  Santosh Turamari
